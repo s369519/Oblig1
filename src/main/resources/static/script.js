@@ -16,15 +16,15 @@ function kjop(){
         alert(" Antallet er ikke et tall!");
     }
     else if(antall<1) {
-        alert("Antallet må være større enn 0 !")
+        alert("Antallet må være større enn 0!");
     }
 
 
     if (isNaN(telefonnr)){
-        alert(" Antallet er ikke et tall!");
+        alert(" Ugyldig telefonnummer!");
     }
     else if(telefonnr<1){
-        alert("Antallet må være mer enn 0 !")
+        alert("Ugyldig telefonnummer!");
     }
 
 
