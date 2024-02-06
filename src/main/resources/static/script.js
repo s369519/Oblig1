@@ -11,25 +11,20 @@ function kjop(){
     const telefonnr = Number(telefonnrS);
     const epost = document.getElementById("epost").value;
 
+
     if (isNaN(antall)){
         alert(" Antallet er ikke et tall!");
-        error=true;
-    }else if(antall<1){
+    }
+    else if(antall<1) {
         alert("Antallet må være større enn 0 !")
-        error=true;
-    }else{
-        error = false;
     }
 
 
     if (isNaN(telefonnr)){
         alert(" Antallet er ikke et tall!");
-        error=true;
-    }else if(telefonnr<1){
+    }
+    else if(telefonnr<1){
         alert("Antallet må være mer enn 0 !")
-        error=true;
-    }else{
-        error = false;
     }
 
 
