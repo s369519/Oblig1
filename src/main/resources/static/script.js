@@ -2,14 +2,14 @@ const billetter=[];
 
 
 function kjop(){
-    const film = document.getElementById("film").value;
-    const antallS = document.getElementById("antall").value;
-    const antall = Number(antallS);
-    const fornavn = document.getElementById("fornavn").value;
-    const etternavn = document.getElementById("etternavn").value;
-    const telefonnrS = document.getElementById("telefonnr").value;
-    const telefonnr = Number(telefonnrS);
-    const epost = document.getElementById("epost").value;
+    const film = document.getElementById("film");
+    const antallS = document.getElementById("antall");
+    const antall = Number(antallS.value);
+    const fornavn = document.getElementById("fornavn");
+    const etternavn = document.getElementById("etternavn");
+    const telefonnrS = document.getElementById("telefonnr");
+    const telefonnr = Number(telefonnrS.value);
+    const epost = document.getElementById("epost");
 
 
     let feilFilm=document.getElementById("feilFilm");
@@ -20,6 +20,7 @@ function kjop(){
     let feilEpost=document.getElementById("feilEpost");
 
     var epostRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var tlfRegex = /^(0047|\+47|47)?[2-9]\d{7}$/;
     const filmer=document.getElementById("alleBilletter");
 
 
@@ -40,8 +41,11 @@ function kjop(){
     else if (telefonnr.value === ""){
         feilTelefonnr.innerHTML = "Telefonnummer må fylles ut!";
     }
+    //else if (telefonnr.length !== 8 && (telefonnr.startsWith('4') || telefonnr.startsWith('9'))){
+
+
     //Sikrer at tlfnr er 8 siffer og starter på enten 4 eller 9 (norsk standard)
-    else if (telefonnr.length !== 8 && (telefonnr.startsWith('4') || telefonnr.startsWith('9'))){
+    else if (tlfRegex.test(telefonnr) === false){
         feilTelefonnr.innerHTML = "Ugyldig telefonnummer";
     }
 
@@ -84,8 +88,10 @@ function kjop(){
             filmer.innerHTML += "<tr><td>" + billetter[i].Film + "</td><td>" + billetter[i].Antall + "</td><td>"
                 + billetter[i].Fornavn + "</td><td>" + billetter[i].Etternavn + "</td><td>" + billetter[i].Telefonnr
                 + "</td><td>" + billetter[i].Epost + "</td></tr>";
+            document.write(billetter);
         }
     }
+
 
 
 
