@@ -16,7 +16,7 @@ function kjop(){
     let feilAntall=document.getElementById("feilAntall");
     let feilFornavn=document.getElementById("feilFornavn");
     let feilEtternavn=document.getElementById("feilEtternavn");
-    let feilTlfnr=document.getElementById("feilTelefonnr");
+    let feilTelefonnr=document.getElementById("feilTelefonnr");
     let feilEpost=document.getElementById("feilEpost");
 
     var epostRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -24,25 +24,26 @@ function kjop(){
 
 
     if (isNaN(antall)){
-        alert(" Antallet er ikke et tall!");
+        feilAntall.innerHTML = " Antallet er ikke et tall!";
     }
     else if(antall<1) {
-        alert("Antallet må være større enn 0!");
+        feilAntall.innerHTML = "Antallet må være større enn 0!";
     }
     else if(antall.value === ""){
-        alert("Antall må fylles inn!");
+        feilAntall.innerHTML = "Antall må fylles inn!";
     }
 
 
     if (isNaN(telefonnr)){
-        alert(" Ugyldig telefonnummer!");
+        feilTelefonnr.innerHTML = "Ugyldig telefonnummer!";
     }
     else if (telefonnr.value === ""){
-        alert("Telefonnummer må fylles ut!");
+        feilTelefonnr.innerHTML = "Telefonnummer må fylles ut!";
     }
+    //Sikrer at tlfnr er 8 siffer og starter på enten 4 eller 9 (norsk standard)
     else if (telefonnr.length !== 8 && (telefonnr.startsWith('4') || telefonnr.startsWith('9'))){
-        alert("Ugyldig telefonnummer");
-    }//Sikrer at tlfnr er 8 siffer og starter på enten 4 eller 9 (norsk standard)
+        feilTelefonnr.innerHTML = "Ugyldig telefonnummer";
+    }
 
 
     if (film.value === "Velg Film") {
@@ -50,19 +51,20 @@ function kjop(){
     }
 
     if (fornavn === ""){
-        alert("Fornavn må fylles ut!");
+        feilFornavn.innerHTML = "Fornavn må fylles ut!";
     }
 
     if (etternavn === ""){
-        alert("Etternavn må fylles ut!");
+        feilEtternavn.innerHTML = "Etternavn må fylles ut!";
     }
 
     if (epost === ""){
-        alert("Epost må fylles ut!");
+        feilEpost.innerHTML = "Epost må fylles ut!";
     }
+    //Tester om epostadressen har grunnleggende formatering
     else if (epostRegex.test(epost) === false){
-        alert("Ugyldig epostadresse!")
-    } //Tester om epostadressen har grunnleggende formatering
+        feilEpost.innerHTML = "Ugyldig epostadresse!";
+    }
 
 
     else {
@@ -90,10 +92,6 @@ function kjop(){
 
 }//Ende av kjøp()
 
-
-function visAlleBilletter(){
-    document.getElementById("alleBilletter").appendChild(table);
-}
 
 
 function slett(){
