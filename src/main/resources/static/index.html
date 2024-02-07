@@ -31,29 +31,35 @@
 
         <tr>
             <td>Antall</td><td><input type="text" size="2" id="antall" onchange="sjekk()"/>
-            <span id="antallfeil" style="color:red;"></span></td>
+            <span id="feilAntall" style="color:red;"></span></td>
         </tr>
 
         <tr><td><br></td></tr>
 
         <tr>
             <td>Fornavn</td><td><input type="text" id="fornavn"/>
-            <span id="fornavnfeil" style="color:red;"></span></td>
+            <span id="feilFornavn" style="color:red;"></span></td>
         </tr>
         <tr>
             <td>Etternavn</td><td><input type="text" id="etternavn"/>
-            <span id="etternavnfeil" style="color:red;"></span></td>
+            <span id="feilEtternavn" style="color:red;"></span></td>
         </tr>
         <tr>
-            <td>Telefonnr</td><td><input type="text" id="telefonnr"/>
-            <span id="telefonnrfeil" style="color:red;"></span></td>
+            <td>
+                Telefonnr</td><td><input type="text" id="telefonnr"/>
+                <span id="feilTelefonnr" style="color:red;"></span>
+            </td>
         </tr>
         <tr>
-            <td>Epost</td><td><input type="text" id="epost"/>
-            <span id="epostfeil" style="color:red;"></span></td>
+            <td>
+                Epost</td><td><input type="text" id="epost"/>
+                <span id="feilEpost" style="color:red;"></span>
+            </td>
         </tr>
         <tr>
-            <td><button onclick="kjop()">Kjøp billett</button></td>
+            <td>
+                <button onclick="kjop()">Kjøp billett</button>
+            </td>
         </tr>
     </table>
 
@@ -62,7 +68,7 @@
 
     <br>
 
-    <div id="alleBiletter"></div>
+    <table id="alleBilletter"></table>
 
     <button onclick=slett()>Slett alle billettene</button>
 
