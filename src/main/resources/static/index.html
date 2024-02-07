@@ -4,25 +4,27 @@
     <meta charset="UTF-8">
     <title>Oblig 1 S369519</title>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
 
-<div>
+<div class="center">
 
 
     <h1>Bestilling av kinobilletter</h1>
 
 
-    <table>
+    <table class="center-table">
         <tr>
             <div>
                 <td>Velg film:</td><td>
                 <select id="film">
-                    <option value="velgFilm">Velg film her</option>
+                    <option value="Velg film her">Velg film her</option>
                     <option value="Biler">Biler</option>
                     <option value="Toy Story">Toy Story</option>
-                    <option value="Napoleon">Napoleon</option>
+                    <option value="Nemo">Nemo</option>
                 </select>
+                <span id="feilFilm" class="feil"></span>
             </td>
             </div>
         </tr>
@@ -31,34 +33,34 @@
 
         <tr>
             <td>Antall</td><td><input type="text" size="2" id="antall"/>
-            <span id="feilAntall" style="color:red;"></span></td>
+            <span id="feilAntall" class="feil"></span></td>
         </tr>
 
         <tr><td><br></td></tr>
 
         <tr>
             <td>Fornavn</td><td><input type="text" id="fornavn"/>
-            <span id="feilFornavn" style="color:red;"></span></td>
+            <span id="feilFornavn" class="feil"></span></td>
         </tr>
         <tr>
             <td>Etternavn</td><td><input type="text" id="etternavn"/>
-            <span id="feilEtternavn" style="color:red;"></span></td>
+            <span id="feilEtternavn" class="feil"></span></td>
         </tr>
         <tr>
             <td>
                 Telefonnr</td><td><input type="text" id="telefonnr"/>
-                <span id="feilTelefonnr" style="color:red;"></span>
+                <span id="feilTelefonnr" class="feil"></span>
             </td>
         </tr>
         <tr>
             <td>
                 Epost</td><td><input type="text" id="epost"/>
-                <span id="feilEpost" style="color:red;"></span>
+                <span id="feilEpost" class="feil"></span>
             </td>
         </tr>
         <tr>
             <td>
-                <button onclick="kjop()">Kjøp billett</button>
+                <button onclick="kjop()" class="gronnKnapp">Kjøp billett</button>
             </td>
         </tr>
     </table>
@@ -68,9 +70,9 @@
 
     <br>
 
-    <table id="alleBilletter"></table>
+    <table id="alleBilletter" class="billetter"></table>
 
-    <button onclick=slett()>Slett alle billettene</button>
+    <button onclick=slett() class="rodKnapp">Slett alle billettene</button>
 
 
 </div>
