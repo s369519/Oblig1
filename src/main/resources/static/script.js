@@ -20,13 +20,17 @@ function kjop(){
     let feilEpost=document.getElementById("feilEpost");
 
 
-    var epostRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const epostRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     //epostRegex sikrer at det er standard format på epost-adressen, altså x@x.x
     //https://stackoverflow.com/questions/201323/how-can-i-validate-an-email-address-using-a-regular-expression
 
-    var tlfRegex = /^(0047|\+47|47)?[2-9]\d{7}$/;
+    const epostResultat = (epostRegex.test(epost.value));
+
+    const tlfRegex = /^((0047)?|(\+47)?)[4|9]\d{7}$/;
     //tlfRegex sikrer at telefonnummeret oppgitt er standard norsk format, samt kan skrives med og uten +47/0047
     //https://stackoverflow.com/questions/34001939/regular-expression-for-norwegian-numbers
+
+    const tlfResultat = (tlfRegex.test(telefonnrS.value));
 
     const filmer=document.getElementById("alleBilletter");
 
@@ -41,19 +45,6 @@ function kjop(){
 
     else if(antall.value === ""){
         feilAntall.innerHTML = "Antall må fylles inn!";
-    }
-
-
-    if (isNaN(telefonnr)) {
-        feilTelefonnr.innerHTML = "Ugyldig telefonnummer!";
-    }
-
-    else if (telefonnrS.value === ""){
-        feilTelefonnr.innerHTML = "Telefonnummer må fylles ut!";
-    }
-
-    else if (tlfRegex.test(telefonnr.value) === false){
-        feilTelefonnr.innerHTML = "Telefonnummeret må være norsk!";
     }
 
 
@@ -87,8 +78,21 @@ function kjop(){
         feilEpost.innerHTML = "Epost må fylles ut!";
     }
 
-    else if (epostRegex.test(epost.value) === false){
+    if (epostResultat !== true){                                       //Filtrerer ikke ugyldige eposter???
         feilEpost.innerHTML = "Ugyldig epostadresse!";
+    }
+
+
+    if (telefonnrS.value === ""){
+        feilTelefonnr.innerHTML = "Telefonnummer må fylles ut!";
+    }
+
+    else if (isNaN(telefonnr.value)) {
+        feilTelefonnr.innerHTML = "Ugyldig telefonnummer!";
+    }
+
+    if (tlfResultat === false){                                       //Filtrerer ugyldige nr men gir ikke feilmelding??
+        feilTelefonnr.innerHTML = "Telefonnummeret må være norsk!";
     }
 
 
@@ -102,13 +106,13 @@ function kjop(){
             Epost: epost.value
         });
 
-        filmer.innerHTML = "<tr><th>Film</th>" + "<th>Antall</th>" + "<th>Fornavn</th>" + "<th>Etternavn</th>"
-                         + "<th>Telefonnr</th>" + "<th>Epost</th></tr>";
+        filmer.innerHTML = "<tr><th>Film </th>" + "<th>Antall </th>" + "<th>Fornavn </th>" + "<th>Etternavn </th>"
+                         + "<th>Telefonnr </th>" + "<th>Epost </th></tr>";
 
         for (let i = 0; i < billetter.length; i++) {
-            filmer.innerHTML += "<tr><td>" + billetter[i].Film + "</td><td>" + billetter[i].Antall + "</td><td>"
+            filmer.innerHTML +=( "<tr><td>" + billetter[i].Film + "</td><td>" + billetter[i].Antall + "</td><td>"
                 + billetter[i].Fornavn + "</td><td>" + billetter[i].Etternavn + "</td><td>" + billetter[i].Telefonnr
-                + "</td><td>" + billetter[i].Epost + "</td></tr>";
+                + "</td><td>" + billetter[i].Epost + "</td></tr>");
         }
     }
 
@@ -125,7 +129,7 @@ function kjop(){
         feilEtternavn.innerHTML = "";
     }
 
-    if (telefonnrS.value !== "" && telefonnrS.value.length == 8) {
+    if (telefonnrS.value !== "") {
         feilTelefonnr.innerHTML = "";
     }
 
@@ -141,7 +145,7 @@ function kjop(){
     telefonnrS.value = "";
     epost.value = "";
 
-}//Ende av kjøp()
+}
 
 function slett(){
     billetter.length = 0;
