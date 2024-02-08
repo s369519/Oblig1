@@ -9,7 +9,7 @@ function kjop(){
     const etternavn = document.getElementById("etternavn");
     const telefonnrS = document.getElementById("telefonnr");
     const telefonnr = Number(telefonnrS.value);
-    let epost = document.getElementById("epost");
+    const epost = document.getElementById("epost");
 
 
     let feilFilm=document.getElementById("feilFilm");
