@@ -1,5 +1,6 @@
 const billetter = [];
 
+
 function kjop() {
     const film = document.getElementById("film");
     const antall = document.getElementById("antall");
@@ -8,6 +9,7 @@ function kjop() {
     const telefonnr = document.getElementById("telefonnr");
     const epost = document.getElementById("epost");
 
+
     let feilFilm = document.getElementById("feilFilm");
     let feilAntall = document.getElementById("feilAntall");
     let feilFornavn = document.getElementById("feilFornavn");
@@ -15,9 +17,10 @@ function kjop() {
     let feilTelefonnr = document.getElementById("feilTelefonnr");
     let feilEpost = document.getElementById("feilEpost");
 
+
     let epostRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     //epostRegex sikrer at det er standard format på epost-adressen, altså x@x.x
-    //https://stackoverflow.com/questions/201323/how-can-i-validate-an-email-address-using-a-regular-expression
+    //https://stackoverflow.com/questions/50330109/simple-regex-pattern-for-email
 
     let epostResultat = ( epostRegex.test(epost.value) );
 
@@ -30,7 +33,7 @@ function kjop() {
 
 
 
-    // Tilbakestiller verdier for feilmeldinger før kjop() valideringene
+    // Tilbakestiller verdier for feilmeldinger
     feilAntall.innerHTML = "";
     feilFilm.innerHTML = "";
     feilFornavn.innerHTML = "";
@@ -38,35 +41,44 @@ function kjop() {
     feilTelefonnr.innerHTML = "";
     feilEpost.innerHTML = "";
 
+
+
     // Validering film
     if (film.value === "Velg film her" || film.value === "") {
         feilFilm.innerHTML = "Du må velge en film!";
     }
 
+
     // Validering antall
-    else if (isNaN(Number(antall.value)) || !(1 <= Number(antall.value) && Number(antall.value) <= 50) || antall.value === "") {
+    if (isNaN(Number(antall.value)) || !(1 <= Number(antall.value) && Number(antall.value) <= 50) || antall.value === "") {
         feilAntall.innerHTML = "Antallet må være mellom 1 og 50!";
     }
 
+
     // Validering fornavn
-    else if (fornavn.value === "" || !isNaN(fornavn.value)) {
+    if (fornavn.value === "" || !isNaN(fornavn.value)) {
         feilFornavn.innerHTML = "Fornavn må fylles ut og være bokstaver!";
     }
 
+
     // Validering etternavn
-    else if (etternavn.value === "" || !isNaN(etternavn.value)) {
+    if (etternavn.value === "" || !isNaN(etternavn.value)) {
         feilEtternavn.innerHTML = "Etternavn må fylles ut og være bokstaver!";
     }
 
+
     // Validering telefonnummer
-    else if (!tlfResultat) {
+    if (!tlfResultat) {
         feilTelefonnr.innerHTML = "Ugyldig telefonnummer!";
     }
 
+
     // Validering epost
-    else if (!epostResultat) {
+    if (!epostResultat) {
         feilEpost.innerHTML = "Ugyldig epostadresse!";
     }
+
+
 
     // Hvis ingen valideringsfeil, legg til billetten
     else {
