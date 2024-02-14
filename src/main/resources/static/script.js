@@ -17,12 +17,12 @@ function kjop() {
     let feilTelefonnr = document.getElementById("feilTelefonnr");
     let feilEpost = document.getElementById("feilEpost");
 
-    //epostRegex sikrer at det er standard format på epost-adressen, altså x@x.x
+    //epostRegex sikrer at det er standard format på epost-adressen, altså x@x.x, tar IKKE hensyn til domenebegrensninger.
     //https://stackoverflow.com/questions/50330109/simple-regex-pattern-for-email
     let epostRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     let epostResultat = ( epostRegex.test(epost.value) );
 
-    //tlfRegex sikrer at telefonnummeret oppgitt er standard norsk format, samt kan skrives med og uten +47/0047
+    //tlfRegex sikrer at telefonnummeret er 8 siffer langt, starter på 9 eller 4 og kan skrives med +47/0047
     //https://stackoverflow.com/questions/34001939/regular-expression-for-norwegian-numbers
     let tlfRegex = /^((0047)?|(\+47)?)[4|9]\d{7}$/;
     let tlfResultat = ( tlfRegex.test(telefonnr.value) );
