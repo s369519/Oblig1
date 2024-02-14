@@ -44,37 +44,37 @@ function kjop() {
 
 
     // Validering film
-    if (film.value === "Velg film her" || film.value === "") {
+    if ( film.value === "Velg film her" || film.value === "" ) {
         feilFilm.innerHTML = "Du må velge en film!";
     }
 
 
     // Validering antall
-    if (isNaN(Number(antall.value)) || !(1 <= Number(antall.value) && Number(antall.value) <= 50) || antall.value === "") {
+    if ( isNaN(Number(antall.value)) || !(1 <= Number(antall.value) && Number(antall.value) <= 50) || antall.value === "" ) {
         feilAntall.innerHTML = "Antallet må være mellom 1 og 50!";
     }
 
 
     // Validering fornavn
-    if (fornavn.value === "" || !isNaN(fornavn.value)) {
+    if ( fornavn.value === "" || !isNaN(fornavn.value) ) {
         feilFornavn.innerHTML = "Fornavn må fylles ut og være bokstaver!";
     }
 
 
     // Validering etternavn
-    if (etternavn.value === "" || !isNaN(etternavn.value)) {
+    if ( etternavn.value === "" || !isNaN(etternavn.value) ) {
         feilEtternavn.innerHTML = "Etternavn må fylles ut og være bokstaver!";
     }
 
 
     // Validering telefonnummer
-    if (!tlfResultat) {
+    if ( !tlfResultat ) {
         feilTelefonnr.innerHTML = "Ugyldig telefonnummer!";
     }
 
 
     // Validering epost
-    if (!epostResultat) {
+    if ( !epostResultat ) {
         feilEpost.innerHTML = "Ugyldig epostadresse!";
     }
 
@@ -94,27 +94,27 @@ function kjop() {
         // Oppdater tabellen med billettinformasjon
         const filmer = document.getElementById("alleBilletter");
         filmer.innerHTML = `
-            <tr>
-                <th>Film</th>
-                <th>Antall</th>
-                <th>Fornavn</th>
-                <th>Etternavn</th>
-                <th>Telefonnr</th>
-                <th>Epost</th>
-            </tr>
-        `;
+                            <tr>
+                                <th>Film</th>
+                                <th>Antall</th>
+                                <th>Fornavn</th>
+                                <th>Etternavn</th>
+                                <th>Telefonnr</th>
+                                <th>Epost</th>
+                            </tr>
+                            `;
 
         for (let i = 0; i < billetter.length; i++) {
             filmer.innerHTML += `
-                <tr>
-                    <td>${billetter[i].Film}</td>
-                    <td>${billetter[i].Antall}</td>
-                    <td>${billetter[i].Fornavn}</td>
-                    <td>${billetter[i].Etternavn}</td>
-                    <td>${billetter[i].Telefonnr}</td>
-                    <td>${billetter[i].Epost}</td>
-                </tr>
-            `;
+                                <tr>
+                                    <td>${billetter[i].Film}</td>
+                                    <td>${billetter[i].Antall}</td>
+                                    <td>${billetter[i].Fornavn}</td>
+                                    <td>${billetter[i].Etternavn}</td>
+                                    <td>${billetter[i].Telefonnr}</td>
+                                    <td>${billetter[i].Epost}</td>
+                                </tr>
+                                `;
         }
     }
 
