@@ -68,7 +68,7 @@ function kjop() {
     }
 
     //Stopper kjop() ved ugyldige inputverdier samt gjør at flere feilmeldinger vises samtidig.
-    if (feilFilm.innerHTML || feilAntall.innerHTML || feilFornavn.innerHTML || feilEtternavn.innerHTML || feilTelefonnr.innerHTML || feilEpost.innerHTML) {
+    if ( feilFilm.innerHTML || feilAntall.innerHTML || feilFornavn.innerHTML || feilEtternavn.innerHTML || feilTelefonnr.innerHTML || feilEpost.innerHTML ) {
         return;
     }
 
