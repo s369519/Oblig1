@@ -26,7 +26,7 @@ function kjop() {
 
 
     let tlfRegex = /^((0047)?|(\+47)?)[4|9]\d{7}$/;
-    //tlfRegex sikrer at telefonnummeret oppgitt er standard norsk format, samt kan skrives med og uten +47/0047/47
+    //tlfRegex sikrer at telefonnummeret oppgitt er standard norsk format, samt kan skrives med og uten +47/0047
     //https://stackoverflow.com/questions/34001939/regular-expression-for-norwegian-numbers
 
     let tlfResultat = ( tlfRegex.test(telefonnr.value) );
@@ -118,7 +118,8 @@ function kjop() {
         }
     }
 
-    // Tilbakestiller inputfeltene slik at man kan skrive inn på nytt
+
+    // Tilbakestiller inputfeltene
     film.value = "Velg film her";
     antall.value = "";
     fornavn.value = "";
@@ -126,6 +127,7 @@ function kjop() {
     telefonnr.value = "";
     epost.value = "";
 }
+
 
 function slett() {
     billetter.length = 0;
