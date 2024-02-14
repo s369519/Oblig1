@@ -119,7 +119,7 @@ function kjop() {
     epost.value = "";
 }
 
-
+//Sletter alt i arrayet, samt tilbakestiller verdier
 function slett() {
     billetter.length = 0;
     document.getElementById("alleBilletter").innerHTML = "";
