@@ -46,36 +46,42 @@ function kjop() {
     // Validering film
     if ( film.value === "Velg film her" || film.value === "" ) {
         feilFilm.innerHTML = "Du må velge en film!";
+        return;
     }
 
 
     // Validering antall
     if ( isNaN(Number(antall.value)) || !(1 <= Number(antall.value) && Number(antall.value) <= 50) || antall.value === "" ) {
         feilAntall.innerHTML = "Antallet må være mellom 1 og 50!";
+        return;
     }
 
 
     // Validering fornavn
     if ( fornavn.value === "" || !isNaN(fornavn.value) ) {
         feilFornavn.innerHTML = "Fornavn må fylles ut og være bokstaver!";
+        return;
     }
 
 
     // Validering etternavn
     if ( etternavn.value === "" || !isNaN(etternavn.value) ) {
         feilEtternavn.innerHTML = "Etternavn må fylles ut og være bokstaver!";
+        return;
     }
 
 
     // Validering telefonnummer
     if ( !tlfResultat ) {
         feilTelefonnr.innerHTML = "Ugyldig telefonnummer!";
+        return;
     }
 
 
     // Validering epost
     if ( !epostResultat ) {
         feilEpost.innerHTML = "Ugyldig epostadresse!";
+        return;
     }
 
 
