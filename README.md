@@ -1,4 +1,5 @@
-Oblig 1 DATA1700 <br>
+# Oblig 1 DATA1700
+
 OsloMet brukernavn: s369519@oslomet.no <br>
 Github brukernavn: s369519 <br>
 Github repo URL: https://github.com/s369519/Oblig1 <br>
