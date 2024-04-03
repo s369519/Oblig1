@@ -48,12 +48,12 @@ function kjop() {
     }
 
     // Validering fornavn
-    if ( fornavn.value === "" || /\d/.test(fornavn.value) ) {
+    if ( fornavn.value === "" || /\d/.test(fornavn.value ) ) {
         feilFornavn.innerHTML = "Fornavn må fylles ut og være bokstaver!";
     }
 
     // Validering etternavn
-    if ( etternavn.value === "" || /\d/.test(etternavn.value) ) {
+    if ( etternavn.value === "" || /\d/.test(etternavn.value ) ) {
         feilEtternavn.innerHTML = "Etternavn må fylles ut og være bokstaver!";
     }
 
@@ -96,7 +96,7 @@ function kjop() {
                             </tr>
                             `;
 
-        for (let i = 0; i < billetter.length; i++) {
+        for ( let i = 0; i < billetter.length; i++ ) {
             filmer.innerHTML += `
                                 <tr>
                                     <td>${billetter[i].Film}</td>
